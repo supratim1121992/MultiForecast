@@ -5,8 +5,7 @@ Version: 0.1.0
 Depends: R (>= 3.3.0), data.table, forecast
 Author: Supratim Chaudhuri
 Maintainer: Supratim Chaudhuri <supratim1121992@gmail.com>
-Description: The package generates forecasts from multiple Time Series models and also presents the user an option to obtain ensembled forecasts
-    Relevant plots are also generated and displayed
+Description: The package generates forecasts from multiple Time Series models and also presents the user an option to obtain ensembled forecasts. Relevant plots are also generated and displayed
 License: HGS
 Encoding: UTF-8
 LazyData: TRUE
