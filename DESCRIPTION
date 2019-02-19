@@ -2,7 +2,7 @@ Package: MultiForecast
 Type: Package
 Title: Multiple Time Series forecasting with an option of ensembling
 Version: 0.1.0
-Depends: R (>= 3.3.0),data.table,forecast
+Depends: R (>= 3.3.0), data.table, forecast
 Author: Supratim Chaudhuri
 Maintainer: Supratim Chaudhuri <supratim1121992@gmail.com>
 Description: The package generates forecasts from multiple Time Series models and also presents the user an option to obtain ensembled forecasts
