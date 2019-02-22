@@ -13,7 +13,7 @@
 #' @return A list containing the forecasted values from each model along with the ensembled forecast
 #' @export
 
-MultiForecast<-function(ts,rdm = c(0,1),act,fper,type = "additive",mod = c("aa","sm","hw"),weight = F,xreg = NULL,freg = NULL){
+MultiForecast<-function(ts,rdm = c(0,1),act,fper,type = "additive",mod = c("aa","sm","hw"),weight = F,xreg = NULL,freg = NULL,itmax = 1000){
   require(forecast)
   require(data.table)
   MAPE<-function(act,pred){
@@ -72,12 +72,12 @@ MultiForecast<-function(ts,rdm = c(0,1),act,fper,type = "additive",mod = c("aa",
   }
 
   if("sm" %in% mod == T){
-    SimArima<-function(ts,rdm,act,fper,type,xreg,freg){
+    SimArima<-function(ts,rdm,act,fper,type,xreg,freg,itmax){
       Parameter<-function(rdm){
         par_vec<-character()
         check<-TRUE
         iter<-0
-        iter_max<-1000
+        iter_max<-itmax
         len_ini<-0
         len_fin<-1
         Sampler<-function(rdm){
