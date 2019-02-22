@@ -17,7 +17,7 @@ MultiForecast<-function(ts,rdm = c(0,1),act,fper,type = "additive",mod = c("aa",
   require(forecast)
   require(data.table)
   MAPE<-function(act,pred){
-    mean(abs(act-pred)/abs(act))*100
+        regr.eval(trues = act,preds = pred,stats = "mape")*100
   }
   pred<-rep(0,times = 5)
   dim(pred)<-c(1,5)
