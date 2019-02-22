@@ -146,7 +146,7 @@ MultiForecast<-function(ts,rdm = c(0,1),act,fper,type = "additive",mod = c("aa",
     else if (type == "additive"){
       ts_sm<-ts
     }
-    simres<-SimArima(ts = ts_sm,rdm = rdm,act = act,type = type,fper = fper,xreg = xreg,freg = freg)
+    simres<-SimArima(ts = ts_sm,rdm = rdm,act = act,type = type,fper = fper,xreg = xreg,freg = freg,itmax = itmax)
     simres$AIC<-as.numeric(as.character(simres$AIC))
     simres$AICC<-as.numeric(as.character(simres$AICC))
     simres$BIC<-as.numeric(as.character(simres$BIC))
