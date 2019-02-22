@@ -334,6 +334,16 @@ MultiForecast<-function(ts,rdm = c(0,1),act,fper,type = "additive",mod = c("aa",
     axis(side = 1,at = c(1,seq(from = 6,to = length(ts2),by = 6)),labels = seq[id],las = 2)
     title(main = "Forecasts after ensembling",ylab = "Counts")
   }
+  if("aa" %in% mod == F){
+    pred_aa<<-NA
+    }
+  if("hw" %in% mod == F){
+    pred_hw<<-NA
+    }
+  if("sm" %in% mod == F){
+    pred_sm<<-NA
+    simres<<-NA
+    }
   res<-list("Auto Arima Forecasts" = pred_aa,"Simulated Arima Forecasts" = pred_sm,"HoltWinters Forecast" = pred_hw,
             "Ensembled Forecast Values" = pred_mn,"Simulation Results" = simres,"Forecast Table" = fore)
   return(res)
